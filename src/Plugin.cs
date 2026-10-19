@@ -186,7 +186,7 @@ namespace Sirroh.FurRandomizer
                 { "Wolf", new[] { "Default", "Albino", "Black", "DarkBrown", "Grey" } },
                 { "Boar", new[] { "Default", "Grey", "Black", "DarkBrown", "Young" } },
                 { "Deer", new[] { "Default", "Albino", "Red", "LightBrown", "Grey" } },
-                { "Asksvin", new[] { "Default", "Albino", "Purple", "Black", "Young" } },
+                { "Asksvin", new[] { "Default", "Albino", "Black", "Purple", "Young" } },
                 { "Neck", new[] { "Default", "Albino", "DarkBlue", "DarkGreen", "Blue" } },
                 { "Hare", new[] { "Default", "Albino", "Black", "DarkBlue", "Ginger" } },
                 { "Hatchling", new[] { "Default", "Red", "DarkBlue", "IceBlue", "Purple" } },
