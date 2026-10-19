@@ -1,41 +1,29 @@
 # Sirroh Fur Randomizer
 
-Projekt kontynuacji Balrond Fur Randomizer, oparty na **kompletnym odzysku danych dostępnych w bibliotece BalrondFurRandomizer.dll**.
+Wydajny system wariantów umaszczenia 9 gatunków Valheim.
 
-## Potwierdzony stan
-
-- DLL użytkownika to dokładnie Balrond furRandomizer 1.0.7 (identyczny SHA-256).
-- 12 plików C# po dekompilacji ILSpy (oryginalnych źródeł autora nie da się odzyskać 1:1).
-- 69 tekstur Texture2D w PNG.
-- 59 materiałów + 3 shadery z metadanymi Unity.
-- Surowy Unity AssetBundle i projekt C# do dalszych zmian.
-- 0 błędów podczas ekstrakcji.
-- **Kompilacja na Valheim 1.0: jeszcze niezweryfikowana.**
+## Optymalizacja
+- 47 odmian skórek; 59 współdzielonych materiałów w jednym AssetBundle
+- Brak tworzenia kopii materiałów na każdego moba
+- Brak skanowania wszystkich shaderów sceny
+- Brak globalnego patchowania LevelEffects (zgodność gwiazdek)
+- Utrzymana numeracja ZDO: furRandomizerSet i furRandomizerSetActive
+- Autor ZDO wybiera wariant; pozostali klienci jedynie odczytują
+- Serwer headless nie ładuje materiałów
+- Jednorazowa inicjalizacja i brak Update() na mobach
 
 ## Pliki
+- src/Plugin.cs — całkowicie nowy kod pluginu
+- src/SirrohFurRandomizer.csproj — projekt do kompilacji
+- assets/SirrohFurRandomizer.furrandomizer — zasoby Unity osadzane w DLL
+- assets/textures/ — edytowalne wyeksportowane PNG
+- assets/materials/ — kopie parametrów materiałów w JSON
+- assets/MATERIAL_CATALOG.md — powiązania skór i tekstur
+- .github/workflows/build.yml — kompilacja na bibliotekach Valheim Dedicated Server
 
-| Ścieżka | Zawartość |
-|---|---|
-| recovered/source/ | Kod C# z ILSpy i oryginalny embedded AssetBundle |
-| recovered/assets/textures/ | Edytowalne eksporty PNG |
-| recovered/assets/materials/ | Material / Shader JSON z wartościami i referencjami |
-| recovered/assets/raw/ | Oryginalny Unity AssetBundle |
-| recovered/assets/MATERIAL_CATALOG.md | **Stworzenie → wariant → materiał → dokładna tekstura** |
-| recovered/assets/MATERIAL_TEXTURE_MAP.json | Kompletny indeks PathID i slotów shaderów |
-| recovered/assets/MANIFEST.json | Lista wszystkich obiektów i błędów |
-| src/SirrohFurRandomizer.csproj | Nowy projekt C# przygotowany pod własne referencje gry |
-| BUILDING.md | Jak zbudować DLL i ponownie osadzić tekstury |
-| AUDIT.md | Zidentyfikowane zagrożenia kompatybilności i obszary napraw |
+## Test
+[Wersje testowe](https://github.com/SirRosa/Sirroh-Fur-Randomizer/releases)
 
-## Użycie
+Kompilacja to nie dowód działania w grze ani pomiar FPS. Testuj na kopii świata i bez starego moda do losowania skórek.
 
-Do poprawiania tekstur zacznij od recovered/assets/MATERIAL_CATALOG.md. Do zmian mechaniki zajrzyj do recovered/source/BalrondFurRandomizer/.
-
-GitHub Actions: workflow Recover Balrond Fur Randomizer dekompiluje dokładny publiczny build i aktualizuje pliki w recovered/. Jego uruchomienie nadpisuje zmiany wykonane bezpośrednio w recovered/. Do rozwoju produkcyjnego korzystaj z niezależnych plików/projektu w src/ lub wyłącz automatyczną regenerację po zakończeniu odzysku.
-
-## Ograniczenia i prawa
-
-- Nie odzyskano oryginalnego projektu Unity, historii Git ani komentarzy autora.
-- Materiały JSON nie są gotowymi plikami .mat; poprawione PNG należy ponownie spakować do AssetBundle.
-- Nie dodawaj do repo bibliotek Valheim/BepInEx z lokalnej instalacji: _references/ jest ignorowany przez Git.
-- Przed redystrybucją odzyskanych grafik i kodu potrzebne jest sprawdzenie praw autorskich oryginalnego autora.
+Odzyskane tekstury mają niezależne prawa autorskie. Przed publiczną redystrybucją sprawdź licencję bądź uzyskaj zgodę autora pierwotnych grafik. Historia odzyskiwania dostępna w historii Git.
