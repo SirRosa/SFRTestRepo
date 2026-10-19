@@ -2,7 +2,7 @@
   {
     "name": "lox_body1",
     "path_id": -8956318265339037646,
-    "asset_path": "assets/balrondfurrandomizer/lox/black/lox_body1.mat",
+    "asset_path": "lox/black/lox_body1.mat",
     "json_file": "materials/Material_lox_body1.json",
     "textures": {
       "_BumpMap": {
@@ -28,7 +28,7 @@
   {
     "name": "lox_face",
     "path_id": -8808303107785273543,
-    "asset_path": "assets/balrondfurrandomizer/lox/albino/lox_face.mat",
+    "asset_path": "lox/albino/lox_face.mat",
     "json_file": "materials/Material_lox_face.json",
     "textures": {
       "_BumpMap": {
@@ -54,7 +54,7 @@
   {
     "name": "Hatchling_mountain_mat1",
     "path_id": -7414519052936386450,
-    "asset_path": "assets/balrondfurrandomizer/drake/darkblue/hatchling_mountain_mat1.mat",
+    "asset_path": "drake/darkblue/hatchling_mountain_mat1.mat",
     "json_file": "materials/Material_Hatchling_mountain_mat1.json",
     "textures": {
       "_BumpMap": {
@@ -80,7 +80,7 @@
   {
     "name": "Deer_brown",
     "path_id": -6461319815038520824,
-    "asset_path": "assets/balrondfurrandomizer/deer/lightbrown/deer_brown.mat",
+    "asset_path": "deer/lightbrown/deer_brown.mat",
     "json_file": "materials/Material_Deer_brown.json",
     "textures": {
       "_BumpMap": {
@@ -100,7 +100,7 @@
   {
     "name": "lox_face",
     "path_id": -6340153601469854879,
-    "asset_path": "assets/balrondfurrandomizer/lox/black/lox_face.mat",
+    "asset_path": "lox/black/lox_face.mat",
     "json_file": "materials/Material_lox_face__-6340153601469854879.json",
     "textures": {
       "_BumpMap": {
@@ -126,7 +126,7 @@
   {
     "name": "asksvincub_Mat_young",
     "path_id": -6239600827885553117,
-    "asset_path": "assets/balrondfurrandomizer/askvin/young/asksvincub_mat_young.mat",
+    "asset_path": "askvin/young/asksvincub_mat_young.mat",
     "json_file": "materials/Material_asksvincub_Mat_young.json",
     "textures": {
       "_BumpMap": {
@@ -146,7 +146,7 @@
   {
     "name": "lox_fur1",
     "path_id": -6118157783196254791,
-    "asset_path": "assets/balrondfurrandomizer/lox/ginger/lox_fur1.mat",
+    "asset_path": "lox/ginger/lox_fur1.mat",
     "json_file": "materials/Material_lox_fur1.json",
     "textures": {
       "_BumpMap": {
@@ -172,7 +172,7 @@
   {
     "name": "lox_body1",
     "path_id": -4974727989057476654,
-    "asset_path": "assets/balrondfurrandomizer/lox/albino/lox_body1.mat",
+    "asset_path": "lox/albino/lox_body1.mat",
     "json_file": "materials/Material_lox_body1__-4974727989057476654.json",
     "textures": {
       "_BumpMap": {
@@ -198,7 +198,7 @@
   {
     "name": "lox_face",
     "path_id": -4765725281686761336,
-    "asset_path": "assets/balrondfurrandomizer/lox/default/lox_face.mat",
+    "asset_path": "lox/default/lox_face.mat",
     "json_file": "materials/Material_lox_face__-4765725281686761336.json",
     "textures": {
       "_BumpMap": {
@@ -224,7 +224,7 @@
   {
     "name": "neck1",
     "path_id": -4557219922955409120,
-    "asset_path": "assets/balrondfurrandomizer/neck/albino/neck1.mat",
+    "asset_path": "neck/albino/neck1.mat",
     "json_file": "materials/Material_neck1.json",
     "textures": {
       "_BumpMap": {
@@ -250,7 +250,7 @@
   {
     "name": "Hatchling_mountain_mat1",
     "path_id": -4367541760003881206,
-    "asset_path": "assets/balrondfurrandomizer/drake/default/hatchling_mountain_mat1.mat",
+    "asset_path": "drake/default/hatchling_mountain_mat1.mat",
     "json_file": "materials/Material_Hatchling_mountain_mat1__-4367541760003881206.json",
     "textures": {
       "_BumpMap": {
@@ -276,7 +276,7 @@
   {
     "name": "neck1",
     "path_id": -4336865031527045296,
-    "asset_path": "assets/balrondfurrandomizer/neck/darkgreen/neck1.mat",
+    "asset_path": "neck/darkgreen/neck1.mat",
     "json_file": "materials/Material_neck1__-4336865031527045296.json",
     "textures": {
       "_BumpMap": {
@@ -302,7 +302,7 @@
   {
     "name": "Material_black",
     "path_id": -4050998753304541590,
-    "asset_path": "assets/balrondfurrandomizer/boar/black/material_black.mat",
+    "asset_path": "boar/black/material_black.mat",
     "json_file": "materials/Material_Material_black.json",
     "textures": {
       "_MainTex": {
@@ -316,7 +316,7 @@
   {
     "name": "neck1",
     "path_id": -3456835471993767948,
-    "asset_path": "assets/balrondfurrandomizer/neck/darkblue/neck1.mat",
+    "asset_path": "neck/darkblue/neck1.mat",
     "json_file": "materials/Material_neck1__-3456835471993767948.json",
     "textures": {
       "_BumpMap": {
@@ -342,7 +342,7 @@
   {
     "name": "neck1",
     "path_id": -2952745209245876358,
-    "asset_path": "assets/balrondfurrandomizer/neck/blue/neck1.mat",
+    "asset_path": "neck/blue/neck1.mat",
     "json_file": "materials/Material_neck1__-2952745209245876358.json",
     "textures": {
       "_BumpMap": {
@@ -368,7 +368,7 @@
   {
     "name": "neck1",
     "path_id": -2911432559019091678,
-    "asset_path": "assets/balrondfurrandomizer/neck/default/neck1.mat",
+    "asset_path": "neck/default/neck1.mat",
     "json_file": "materials/Material_neck1__-2911432559019091678.json",
     "textures": {
       "_BumpMap": {
@@ -394,7 +394,7 @@
   {
     "name": "Hare_mat1",
     "path_id": -2709127106656004426,
-    "asset_path": "assets/balrondfurrandomizer/hare/albino/hare_mat1.mat",
+    "asset_path": "hare/albino/hare_mat1.mat",
     "json_file": "materials/Material_Hare_mat1.json",
     "textures": {
       "_BumpMap": {
@@ -420,7 +420,7 @@
   {
     "name": "wolfMat",
     "path_id": -1907831967919139966,
-    "asset_path": "assets/balrondfurrandomizer/wolf/grey/wolfmat.mat",
+    "asset_path": "wolf/grey/wolfmat.mat",
     "json_file": "materials/Material_wolfMat.json",
     "textures": {
       "_BumpMap": {
@@ -446,7 +446,7 @@
   {
     "name": "Material_young",
     "path_id": -1851959003446814794,
-    "asset_path": "assets/balrondfurrandomizer/boar/young/material_young.mat",
+    "asset_path": "boar/young/material_young.mat",
     "json_file": "materials/Material_Material_young.json",
     "textures": {
       "_MainTex": {
@@ -460,7 +460,7 @@
   {
     "name": "Hare_mat1",
     "path_id": -1549330146413597254,
-    "asset_path": "assets/balrondfurrandomizer/hare/black/hare_mat1.mat",
+    "asset_path": "hare/black/hare_mat1.mat",
     "json_file": "materials/Material_Hare_mat1__-1549330146413597254.json",
     "textures": {
       "_BumpMap": {
@@ -486,7 +486,7 @@
   {
     "name": "lox_fur1",
     "path_id": -1431882487839540271,
-    "asset_path": "assets/balrondfurrandomizer/lox/albino/lox_fur1.mat",
+    "asset_path": "lox/albino/lox_fur1.mat",
     "json_file": "materials/Material_lox_fur1__-1431882487839540271.json",
     "textures": {
       "_BumpMap": {
@@ -512,7 +512,7 @@
   {
     "name": "asksvin_Mat_black",
     "path_id": -900070808650885370,
-    "asset_path": "assets/balrondfurrandomizer/askvin/black/asksvin_mat_black.mat",
+    "asset_path": "askvin/black/asksvin_mat_black.mat",
     "json_file": "materials/Material_asksvin_Mat_black.json",
     "textures": {
       "_BumpMap": {
@@ -532,7 +532,7 @@
   {
     "name": "lox_fur1",
     "path_id": -464601900895790849,
-    "asset_path": "assets/balrondfurrandomizer/lox/blonde/lox_fur1.mat",
+    "asset_path": "lox/blonde/lox_fur1.mat",
     "json_file": "materials/Material_lox_fur1__-464601900895790849.json",
     "textures": {
       "_BumpMap": {
@@ -558,7 +558,7 @@
   {
     "name": "Hatchling_mountain_mat1",
     "path_id": -189140809348572123,
-    "asset_path": "assets/balrondfurrandomizer/drake/iceblue/hatchling_mountain_mat1.mat",
+    "asset_path": "drake/iceblue/hatchling_mountain_mat1.mat",
     "json_file": "materials/Material_Hatchling_mountain_mat1__-189140809348572123.json",
     "textures": {
       "_BumpMap": {
@@ -584,7 +584,7 @@
   {
     "name": "SeaSerpent_mat1",
     "path_id": -178075423429186525,
-    "asset_path": "assets/balrondfurrandomizer/serpent/default/seaserpent_mat1.mat",
+    "asset_path": "serpent/default/seaserpent_mat1.mat",
     "json_file": "materials/Material_SeaSerpent_mat1.json",
     "textures": {
       "_BumpMap": {
@@ -616,7 +616,7 @@
   {
     "name": "Hatchling_mountain_mat1",
     "path_id": 450903688378546273,
-    "asset_path": "assets/balrondfurrandomizer/drake/red/hatchling_mountain_mat1.mat",
+    "asset_path": "drake/red/hatchling_mountain_mat1.mat",
     "json_file": "materials/Material_Hatchling_mountain_mat1__450903688378546273.json",
     "textures": {
       "_BumpMap": {
@@ -642,7 +642,7 @@
   {
     "name": "Hare_mat1",
     "path_id": 749689147679700496,
-    "asset_path": "assets/balrondfurrandomizer/hare/darkblue/hare_mat1.mat",
+    "asset_path": "hare/darkblue/hare_mat1.mat",
     "json_file": "materials/Material_Hare_mat1__749689147679700496.json",
     "textures": {
       "_BumpMap": {
@@ -668,7 +668,7 @@
   {
     "name": "lox_body1",
     "path_id": 1204412841610524912,
-    "asset_path": "assets/balrondfurrandomizer/lox/default/lox_body1.mat",
+    "asset_path": "lox/default/lox_body1.mat",
     "json_file": "materials/Material_lox_body1__1204412841610524912.json",
     "textures": {
       "_BumpMap": {
@@ -694,7 +694,7 @@
   {
     "name": "SeaSerpent_mat1",
     "path_id": 1352655229788062173,
-    "asset_path": "assets/balrondfurrandomizer/serpent/green/seaserpent_mat1.mat",
+    "asset_path": "serpent/green/seaserpent_mat1.mat",
     "json_file": "materials/Material_SeaSerpent_mat1__1352655229788062173.json",
     "textures": {
       "_BumpMap": {
@@ -726,7 +726,7 @@
   {
     "name": "Deer_gray",
     "path_id": 1637991406836002873,
-    "asset_path": "assets/balrondfurrandomizer/deer/grey/deer_gray.mat",
+    "asset_path": "deer/grey/deer_gray.mat",
     "json_file": "materials/Material_Deer_gray.json",
     "textures": {
       "_BumpMap": {
@@ -746,7 +746,7 @@
   {
     "name": "lox_face",
     "path_id": 1644506440726917009,
-    "asset_path": "assets/balrondfurrandomizer/lox/darkbrown/lox_face.mat",
+    "asset_path": "lox/darkbrown/lox_face.mat",
     "json_file": "materials/Material_lox_face__1644506440726917009.json",
     "textures": {
       "_BumpMap": {
@@ -772,7 +772,7 @@
   {
     "name": "lox_face",
     "path_id": 1668382400518706660,
-    "asset_path": "assets/balrondfurrandomizer/lox/ginger/lox_face.mat",
+    "asset_path": "lox/ginger/lox_face.mat",
     "json_file": "materials/Material_lox_face__1668382400518706660.json",
     "textures": {
       "_BumpMap": {
@@ -798,7 +798,7 @@
   {
     "name": "wolfMat",
     "path_id": 1836756486265267817,
-    "asset_path": "assets/balrondfurrandomizer/wolf/default/wolfmat.mat",
+    "asset_path": "wolf/default/wolfmat.mat",
     "json_file": "materials/Material_wolfMat__1836756486265267817.json",
     "textures": {
       "_BumpMap": {
@@ -824,7 +824,7 @@
   {
     "name": "Deer_default",
     "path_id": 1864285242522958015,
-    "asset_path": "assets/balrondfurrandomizer/deer/default/deer_default.mat",
+    "asset_path": "deer/default/deer_default.mat",
     "json_file": "materials/Material_Deer_default.json",
     "textures": {
       "_BumpMap": {
@@ -844,7 +844,7 @@
   {
     "name": "wolfMat",
     "path_id": 2175599386191169852,
-    "asset_path": "assets/balrondfurrandomizer/wolf/darkbrown/wolfmat.mat",
+    "asset_path": "wolf/darkbrown/wolfmat.mat",
     "json_file": "materials/Material_wolfMat__2175599386191169852.json",
     "textures": {
       "_BumpMap": {
@@ -870,7 +870,7 @@
   {
     "name": "lox_face",
     "path_id": 2369260949358173731,
-    "asset_path": "assets/balrondfurrandomizer/lox/blonde/lox_face.mat",
+    "asset_path": "lox/blonde/lox_face.mat",
     "json_file": "materials/Material_lox_face__2369260949358173731.json",
     "textures": {
       "_BumpMap": {
@@ -896,7 +896,7 @@
   {
     "name": "lox_body1",
     "path_id": 2696117000700215300,
-    "asset_path": "assets/balrondfurrandomizer/lox/blonde/lox_body1.mat",
+    "asset_path": "lox/blonde/lox_body1.mat",
     "json_file": "materials/Material_lox_body1__2696117000700215300.json",
     "textures": {
       "_BumpMap": {
@@ -922,7 +922,7 @@
   {
     "name": "Material_grey",
     "path_id": 3441493823938737325,
-    "asset_path": "assets/balrondfurrandomizer/boar/grey/material_grey.mat",
+    "asset_path": "boar/grey/material_grey.mat",
     "json_file": "materials/Material_Material_grey.json",
     "textures": {
       "_MainTex": {
@@ -936,7 +936,7 @@
   {
     "name": "Deer_red",
     "path_id": 4172449952516674960,
-    "asset_path": "assets/balrondfurrandomizer/deer/red/deer_red.mat",
+    "asset_path": "deer/red/deer_red.mat",
     "json_file": "materials/Material_Deer_red.json",
     "textures": {
       "_BumpMap": {
@@ -956,7 +956,7 @@
   {
     "name": "wolfMat",
     "path_id": 4520296053721286618,
-    "asset_path": "assets/balrondfurrandomizer/wolf/albino/wolfmat.mat",
+    "asset_path": "wolf/albino/wolfmat.mat",
     "json_file": "materials/Material_wolfMat__4520296053721286618.json",
     "textures": {
       "_BumpMap": {
@@ -982,7 +982,7 @@
   {
     "name": "asksvin_Mat_albino",
     "path_id": 4531751049239197337,
-    "asset_path": "assets/balrondfurrandomizer/askvin/albino/asksvin_mat_albino.mat",
+    "asset_path": "askvin/albino/asksvin_mat_albino.mat",
     "json_file": "materials/Material_asksvin_Mat_albino.json",
     "textures": {
       "_BumpMap": {
@@ -1002,7 +1002,7 @@
   {
     "name": "asksvin_Mat_default",
     "path_id": 4534780069539693549,
-    "asset_path": "assets/balrondfurrandomizer/askvin/default/asksvin_mat_default.mat",
+    "asset_path": "askvin/default/asksvin_mat_default.mat",
     "json_file": "materials/Material_asksvin_Mat_default.json",
     "textures": {
       "_BumpMap": {
@@ -1022,7 +1022,7 @@
   {
     "name": "lox_fur1",
     "path_id": 4592660900659291084,
-    "asset_path": "assets/balrondfurrandomizer/lox/darkbrown/lox_fur1.mat",
+    "asset_path": "lox/darkbrown/lox_fur1.mat",
     "json_file": "materials/Material_lox_fur1__4592660900659291084.json",
     "textures": {
       "_BumpMap": {
@@ -1048,7 +1048,7 @@
   {
     "name": "Hatchling_mountain_mat1",
     "path_id": 5107378229908962112,
-    "asset_path": "assets/balrondfurrandomizer/drake/purple/hatchling_mountain_mat1.mat",
+    "asset_path": "drake/purple/hatchling_mountain_mat1.mat",
     "json_file": "materials/Material_Hatchling_mountain_mat1__5107378229908962112.json",
     "textures": {
       "_BumpMap": {
@@ -1074,7 +1074,7 @@
   {
     "name": "SeaSerpent_mat1",
     "path_id": 5597238367969905098,
-    "asset_path": "assets/balrondfurrandomizer/serpent/black/seaserpent_mat1.mat",
+    "asset_path": "serpent/black/seaserpent_mat1.mat",
     "json_file": "materials/Material_SeaSerpent_mat1__5597238367969905098.json",
     "textures": {
       "_BumpMap": {
@@ -1106,7 +1106,7 @@
   {
     "name": "Material_darkBrown",
     "path_id": 5754421271888629878,
-    "asset_path": "assets/balrondfurrandomizer/boar/darkbrown/material_darkbrown.mat",
+    "asset_path": "boar/darkbrown/material_darkbrown.mat",
     "json_file": "materials/Material_Material_darkBrown.json",
     "textures": {
       "_MainTex": {
@@ -1120,7 +1120,7 @@
   {
     "name": "lox_fur1",
     "path_id": 5929997148266843083,
-    "asset_path": "assets/balrondfurrandomizer/lox/default/lox_fur1.mat",
+    "asset_path": "lox/default/lox_fur1.mat",
     "json_file": "materials/Material_lox_fur1__5929997148266843083.json",
     "textures": {
       "_BumpMap": {
@@ -1146,7 +1146,7 @@
   {
     "name": "wolfMat",
     "path_id": 5934163462926115078,
-    "asset_path": "assets/balrondfurrandomizer/wolf/black/wolfmat.mat",
+    "asset_path": "wolf/black/wolfmat.mat",
     "json_file": "materials/Material_wolfMat__5934163462926115078.json",
     "textures": {
       "_BumpMap": {
@@ -1172,7 +1172,7 @@
   {
     "name": "asksvin_Mat_purple",
     "path_id": 6372988674144119116,
-    "asset_path": "assets/balrondfurrandomizer/askvin/purple/asksvin_mat_purple.mat",
+    "asset_path": "askvin/purple/asksvin_mat_purple.mat",
     "json_file": "materials/Material_asksvin_Mat_purple.json",
     "textures": {
       "_BumpMap": {
@@ -1192,7 +1192,7 @@
   {
     "name": "Material_default",
     "path_id": 6584590122794288222,
-    "asset_path": "assets/balrondfurrandomizer/boar/default/material_default.mat",
+    "asset_path": "boar/default/material_default.mat",
     "json_file": "materials/Material_Material_default.json",
     "textures": {
       "_MainTex": {
@@ -1206,7 +1206,7 @@
   {
     "name": "Deer_albino",
     "path_id": 6803318488019780293,
-    "asset_path": "assets/balrondfurrandomizer/deer/albino/deer_albino.mat",
+    "asset_path": "deer/albino/deer_albino.mat",
     "json_file": "materials/Material_Deer_albino.json",
     "textures": {
       "_BumpMap": {
@@ -1226,7 +1226,7 @@
   {
     "name": "Hare_mat1",
     "path_id": 6814181800023246038,
-    "asset_path": "assets/balrondfurrandomizer/hare/default/hare_mat1.mat",
+    "asset_path": "hare/default/hare_mat1.mat",
     "json_file": "materials/Material_Hare_mat1__6814181800023246038.json",
     "textures": {
       "_BumpMap": {
@@ -1252,7 +1252,7 @@
   {
     "name": "SeaSerpent_mat1",
     "path_id": 7194284559032241695,
-    "asset_path": "assets/balrondfurrandomizer/serpent/albino/seaserpent_mat1.mat",
+    "asset_path": "serpent/albino/seaserpent_mat1.mat",
     "json_file": "materials/Material_SeaSerpent_mat1__7194284559032241695.json",
     "textures": {
       "_BumpMap": {
@@ -1284,7 +1284,7 @@
   {
     "name": "lox_fur1",
     "path_id": 7385403917406619613,
-    "asset_path": "assets/balrondfurrandomizer/lox/black/lox_fur1.mat",
+    "asset_path": "lox/black/lox_fur1.mat",
     "json_file": "materials/Material_lox_fur1__7385403917406619613.json",
     "textures": {
       "_BumpMap": {
@@ -1310,7 +1310,7 @@
   {
     "name": "lox_body1",
     "path_id": 8217035182366095001,
-    "asset_path": "assets/balrondfurrandomizer/lox/darkbrown/lox_body1.mat",
+    "asset_path": "lox/darkbrown/lox_body1.mat",
     "json_file": "materials/Material_lox_body1__8217035182366095001.json",
     "textures": {
       "_BumpMap": {
@@ -1336,7 +1336,7 @@
   {
     "name": "lox_body1",
     "path_id": 8650706395537963113,
-    "asset_path": "assets/balrondfurrandomizer/lox/ginger/lox_body1.mat",
+    "asset_path": "lox/ginger/lox_body1.mat",
     "json_file": "materials/Material_lox_body1__8650706395537963113.json",
     "textures": {
       "_BumpMap": {
@@ -1362,7 +1362,7 @@
   {
     "name": "SeaSerpent_mat1",
     "path_id": 8904115275485232809,
-    "asset_path": "assets/balrondfurrandomizer/serpent/red/seaserpent_mat1.mat",
+    "asset_path": "serpent/red/seaserpent_mat1.mat",
     "json_file": "materials/Material_SeaSerpent_mat1__8904115275485232809.json",
     "textures": {
       "_BumpMap": {
@@ -1394,7 +1394,7 @@
   {
     "name": "SeaSerpent_mat1",
     "path_id": 9184950336972263326,
-    "asset_path": "assets/balrondfurrandomizer/serpent/blue/seaserpent_mat1.mat",
+    "asset_path": "serpent/blue/seaserpent_mat1.mat",
     "json_file": "materials/Material_SeaSerpent_mat1__9184950336972263326.json",
     "textures": {
       "_BumpMap": {
@@ -1426,7 +1426,7 @@
   {
     "name": "Hare_mat1",
     "path_id": 9211226769862371899,
-    "asset_path": "assets/balrondfurrandomizer/hare/ginger/hare_mat1.mat",
+    "asset_path": "hare/ginger/hare_mat1.mat",
     "json_file": "materials/Material_Hare_mat1__9211226769862371899.json",
     "textures": {
       "_BumpMap": {
