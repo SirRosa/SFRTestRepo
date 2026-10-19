@@ -1,34 +1,33 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <!-- Editable build wrapper; recovered/source is the untouched ILSpy export. -->
   <PropertyGroup>
-    <AssemblyName>SirrohFurRandomizer</AssemblyName>
-    <RootNamespace>BalrondFurRandomizer</RootNamespace>
     <TargetFramework>net48</TargetFramework>
-    <LangVersion>14.0</LangVersion>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <ValheimManagedDir Condition="'$(ValheimManagedDir)' == ''">$(MSBuildThisFileDirectory)../_references/Managed</ValheimManagedDir>
-    <BepInExCoreDir Condition="'$(BepInExCoreDir)' == ''">$(MSBuildThisFileDirectory)../_references/BepInEx/core</BepInExCoreDir>
+    <AssemblyName>SirrohFurRandomizer</AssemblyName>
+    <RootNamespace>Sirroh.FurRandomizer</RootNamespace>
+    <Version>0.1.0</Version>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <GameManagedDir Condition="'$(GameManagedDir)' == ''">$(MSBuildThisFileDirectory)../_references/GameManaged</GameManagedDir>
+    <BepInExCoreDir Condition="'$(BepInExCoreDir)' == ''">$(MSBuildThisFileDirectory)../_references/BepInEx</BepInExCoreDir>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net48" Version="1.0.3" PrivateAssets="all" />
-    <Compile Include="../recovered/source/**/*.cs" />
-    <EmbeddedResource Include="../recovered/assets/raw/BalrondFurRandomizer.furrandomizer"
-                      LogicalName="BalrondFurRandomizer.furrandomizer" />
+    <EmbeddedResource Include="../assets/SirrohFurRandomizer.furrandomizer"
+                      LogicalName="SirrohFurRandomizer.furrandomizer" />
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>$(ValheimManagedDir)/UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>$(GameManagedDir)/UnityEngine.CoreModule.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="UnityEngine.AssetBundleModule">
-      <HintPath>$(ValheimManagedDir)/UnityEngine.AssetBundleModule.dll</HintPath>
+      <HintPath>$(GameManagedDir)/UnityEngine.AssetBundleModule.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="assembly_valheim">
-      <HintPath>$(ValheimManagedDir)/assembly_valheim.dll</HintPath>
+      <HintPath>$(GameManagedDir)/assembly_valheim.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="assembly_utils">
-      <HintPath>$(ValheimManagedDir)/assembly_utils.dll</HintPath>
+      <HintPath>$(GameManagedDir)/assembly_utils.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="BepInEx">
@@ -40,10 +39,10 @@
       <Private>false</Private>
     </Reference>
   </ItemGroup>
-  <Target Name="ValidateGameReferences" BeforeTargets="ResolveReferences">
-    <Error Condition="!Exists('$(ValheimManagedDir)/assembly_valheim.dll')"
-           Text="Missing Valheim references: set /p:ValheimManagedDir=... to valheim_Data/Managed." />
+  <Target Name="CheckValheimReferences" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(GameManagedDir)/assembly_valheim.dll')"
+           Text="Game assemblies missing: set -p:GameManagedDir=/path/to/valheim_Data/Managed" />
     <Error Condition="!Exists('$(BepInExCoreDir)/BepInEx.dll')"
-           Text="Missing BepInEx references: set /p:BepInExCoreDir=... to BepInEx/core." />
+           Text="BepInEx assemblies missing: set -p:BepInExCoreDir=/path/to/BepInEx/core" />
   </Target>
 </Project>
