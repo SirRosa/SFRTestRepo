@@ -240,7 +240,9 @@ namespace Sirroh.FurRandomizer
                 string variantName = segments[segments.Length - 2];
                 string filename = segments[segments.Length - 1];
                 string animal = folder.Equals("Drake", StringComparison.OrdinalIgnoreCase)
-                    ? "Hatchling" : folder;
+                    ? "Hatchling"
+                    : folder.Equals("Askvin", StringComparison.OrdinalIgnoreCase)
+                        ? "Asksvin" : folder;
 
                 if (!VariantNames.ContainsKey(animal))
                     continue;
