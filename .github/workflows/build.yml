@@ -101,14 +101,14 @@ jobs:
           cat > _package/manifest.json <<'JSON'
           {
             "name": "SirrohFurRandomizer",
-            "version_number": "0.1.0",
+            "version_number": "0.1.1",
             "website_url": "https://github.com/SirRosa/Sirroh-Fur-Randomizer",
             "description": "Fast and networked fur and skin variants for nine Valheim creatures.",
             "dependencies": ["denikson-BepInExPack_Valheim-5.4.2351"]
           }
           JSON
           cat > _package/README.md <<'MD'
-          # Sirroh Fur Randomizer 0.1.0 — test build
+          # Sirroh Fur Randomizer 0.1.1 — test build
 
           Shares material instances across all animals; no global shader scans,
           no per-animal new Material allocation, and no LevelEffects replacement.
@@ -133,15 +133,15 @@ jobs:
           d.ellipse((104,117,156,170),fill=(202,165,95))
           im.save("_package/icon.png")
           PY
-          (cd _package && zip -qr ../dist/Sirroh-Fur-Randomizer-0.1.0-test.zip .)
-          unzip -l dist/Sirroh-Fur-Randomizer-0.1.0-test.zip
-          sha256sum dist/Sirroh-Fur-Randomizer-0.1.0-test.zip
+          (cd _package && zip -qr ../dist/Sirroh-Fur-Randomizer-0.1.1-test.zip .)
+          unzip -l dist/Sirroh-Fur-Randomizer-0.1.1-test.zip
+          sha256sum dist/Sirroh-Fur-Randomizer-0.1.1-test.zip
 
       - name: Upload test package
         uses: actions/upload-artifact@v4
         with:
-          name: Sirroh-Fur-Randomizer-0.1.0-test
-          path: dist/Sirroh-Fur-Randomizer-0.1.0-test.zip
+          name: Sirroh-Fur-Randomizer-0.1.1-test
+          path: dist/Sirroh-Fur-Randomizer-0.1.1-test.zip
           if-no-files-found: error
 
       - name: Publish test prerelease
@@ -149,10 +149,10 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if gh release view v0.1.0-test >/dev/null 2>&1; then
-            gh release upload v0.1.0-test dist/Sirroh-Fur-Randomizer-0.1.0-test.zip --clobber
+          if gh release view v0.1.1-test >/dev/null 2>&1; then
+            gh release upload v0.1.1-test dist/Sirroh-Fur-Randomizer-0.1.1-test.zip --clobber
           else
-            gh release create v0.1.0-test dist/Sirroh-Fur-Randomizer-0.1.0-test.zip \
-              --title "Sirroh Fur Randomizer 0.1.0 — test" --prerelease --latest=false \
+            gh release create v0.1.1-test dist/Sirroh-Fur-Randomizer-0.1.1-test.zip \
+              --title "Sirroh Fur Randomizer 0.1.1 — test" --prerelease --latest=false \
               --notes "Compiled against current Valheim dedicated-server game assemblies. In-game FPS, shaders and multiplayer still require testing."
           fi
