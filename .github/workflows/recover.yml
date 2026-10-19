@@ -5,6 +5,7 @@ on:
     paths:
       - ".github/workflows/recover.yml"
       - "scripts/recover_assets.py"
+      - "scripts/build_material_catalog.py"
   workflow_dispatch:
 
 permissions:
@@ -73,6 +74,9 @@ jobs:
         run: |
           python3 scripts/recover_assets.py _input/BalrondFurRandomizer.dll recovered/assets
 
+      - name: Build animal/variant/material-to-texture catalogue
+        run: python3 scripts/build_material_catalog.py recovered/assets
+
       - name: Write recovery report
         run: |
           python3 - <<'PY'
@@ -125,5 +129,6 @@ jobs:
             echo "No changes to recovered files."
           else
             git commit -m "feat: restore decompiled C# and Unity textures from Balrond 1.0.7"
+            git pull --rebase origin main
             git push origin HEAD:main
           fi
