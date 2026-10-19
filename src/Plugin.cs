@@ -44,26 +44,29 @@ namespace Sirroh.FurRandomizer
             MaterialCatalog.Release();
         }
 
-        // One callback for newly initialized characters; no Update polling for every mob.
-        [HarmonyPatch(typeof(Character), "Start")]
-        private static class CharacterStartPatch
+        // Register only nine supported prefabs once per world load.
+        // This avoids a Harmony invocation for every Character.Start in the world.
+        [HarmonyPatch(typeof(ZNetScene), "Awake")]
+        private static class ScenePrefabPatch
         {
-            private static void Postfix(Character __instance)
+            private static void Prefix(ZNetScene __instance)
             {
-                if (!__instance || !__instance.gameObject)
+                if (!__instance || __instance.m_prefabs == null)
                     return;
 
-                string prefabName = __instance.gameObject.name;
-                int cloneMarker = prefabName.IndexOf('(');
-                if (cloneMarker >= 0)
-                    prefabName = prefabName.Substring(0, cloneMarker);
+                int attached = 0;
+                foreach (GameObject prefab in __instance.m_prefabs)
+                {
+                    if (!prefab || !MaterialCatalog.IsSupported(prefab.name))
+                        continue;
 
-                if (!MaterialCatalog.IsSupported(prefabName))
-                    return;
-
-                // Avoid duplicate components if a companion mod also calls the patch.
-                if (!__instance.GetComponent<SkinAssignment>())
-                    __instance.gameObject.AddComponent<SkinAssignment>();
+                    if (!prefab.GetComponent<SkinAssignment>())
+                    {
+                        prefab.AddComponent<SkinAssignment>();
+                        attached++;
+                    }
+                }
+                Plugin.Log?.LogDebug("Registered skin components on " + attached + " vanilla prefabs.");
             }
         }
     }
