@@ -393,7 +393,7 @@ namespace Sirroh.FurRandomizer
                 return;
 
             // Resolve shader against a known-good live vanilla material, once per variant.
-            // Avoid Resources.FindObjectsOfTypeAll, LoadAllAssets<Shader>, and scene scans.
+            // Only inspect the original renderer and reuse its shader; no scene-wide scanning.
             Material[] slots = renderer.sharedMaterials;
             if (slots == null || slot >= slots.Length)
                 return;
