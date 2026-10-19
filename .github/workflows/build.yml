@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "src/**"
+      - "tests/**"
       - "assets/SirrohFurRandomizer.furrandomizer"
       - ".github/workflows/build.yml"
   workflow_dispatch:
@@ -17,6 +18,9 @@ jobs:
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
+
+      - name: Validate all material variants and texture references
+        run: python3 tests/check_catalog.py
 
       - name: Install .NET
         uses: actions/setup-dotnet@v4
