@@ -93,6 +93,13 @@ def main() -> None:
     texture_dir.mkdir(exist_ok=True)
     material_dir.mkdir(exist_ok=True)
     type_counts = Counter()
+    # AssetBundle container paths preserve creature/variant directory names.
+    # They are critical because many materials and textures share m_Name.
+    container_paths = {}
+    try:
+        container_paths = {reader.path_id: asset_path for asset_path, reader in environment.container.items()}
+    except Exception as exc:
+        manifest["errors"].append("AssetBundle container path extraction: " + repr(exc))
     claimed_names: set[str] = set()
 
     for obj in environment.objects:
@@ -100,6 +107,8 @@ def main() -> None:
         type_counts[typename] += 1
         path_id = obj.path_id
         record = {"path_id": path_id, "type": typename}
+        if path_id in container_paths:
+            record["asset_path"] = container_paths[path_id]
         manifest["objects"].append(record)
         if typename not in ("Texture2D", "Material", "Shader", "Sprite", "TextAsset"):
             continue
