@@ -1,0 +1,144 @@
+name: Build Sirroh Fur Randomizer
+
+on:
+  push:
+    paths:
+      - "src/**"
+      - "assets/SirrohFurRandomizer.furrandomizer"
+      - ".github/workflows/build.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Fetch current Valheim dedicated-server libraries
+        shell: bash
+        run: |
+          sudo apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq lib32gcc-s1 lib32stdc++6
+          mkdir -p "$RUNNER_TEMP/steamcmd" "$RUNNER_TEMP/server"
+          curl -fsSL --retry 3 -o "$RUNNER_TEMP/steamcmd.tar.gz" https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
+          tar -xzf "$RUNNER_TEMP/steamcmd.tar.gz" -C "$RUNNER_TEMP/steamcmd"
+          "$RUNNER_TEMP/steamcmd/steamcmd.sh" +force_install_dir "$RUNNER_TEMP/server" +login anonymous +app_update 896660 validate +quit
+          managed="$RUNNER_TEMP/server/valheim_server_Data/Managed"
+          test -s "$managed/assembly_valheim.dll"
+          test -s "$managed/UnityEngine.CoreModule.dll"
+          echo "GAME_MANAGED=$managed" >> "$GITHUB_ENV"
+          sha256sum "$managed/assembly_valheim.dll"
+
+      - name: Fetch BepInEx Valheim libraries
+        shell: bash
+        run: |
+          curl -fsSL --retry 3 -o "$RUNNER_TEMP/bep.zip" https://gcdn.thunderstore.io/live/repository/packages/denikson-BepInExPack_Valheim-5.4.2351.zip
+          python3 - <<'PY'
+          import os,pathlib,zipfile
+          root=pathlib.Path(os.environ["RUNNER_TEMP"])
+          dst=root/"BepInEx-core"
+          dst.mkdir(exist_ok=True)
+          with zipfile.ZipFile(root/"bep.zip") as archive:
+              files=[n for n in archive.namelist() if n.endswith("/core/BepInEx.dll")]
+              assert len(files)==1, f"Missing BepInEx.dll: {files}"
+              prefix=files[0].rsplit("/",1)[0]+"/"
+              for name in ("BepInEx.dll","0Harmony.dll"):
+                  (dst/name).write_bytes(archive.read(prefix+name))
+          with open(os.environ["GITHUB_ENV"],"a") as f:
+              f.write("BEPINEX_CORE="+str(dst)+"\n")
+          PY
+
+      - name: Check high-cost patterns absent from Sirroh sources
+        shell: bash
+        run: |
+          if grep -RniE 'Balrond|new Material\(|Resources\.FindObjectsOfTypeAll|LevelEffects\.SetupLevelVisualization' src/; then
+            echo "Unwanted legacy logic in clean plugin"
+            exit 1
+          fi
+          python3 - <<'PY'
+          from pathlib import Path
+          s=Path("src/Plugin.cs").read_text()
+          for phrase in ["furRandomizerSet", "furRandomizerSetActive", "IsOwner()", "Destroy(this)", "ShaderChecked"]:
+              assert phrase in s,phrase
+          print("Structure checks passed")
+          PY
+
+      - name: Compile plugin with actual game references
+        run: |
+          dotnet restore src/SirrohFurRandomizer.csproj
+          dotnet build src/SirrohFurRandomizer.csproj --no-restore -c Release \
+            -p:GameManagedDir="$GAME_MANAGED" -p:BepInExCoreDir="$BEPINEX_CORE"
+          test -s src/bin/Release/net48/SirrohFurRandomizer.dll
+
+      - name: Create Thunderstore ZIP
+        shell: bash
+        run: |
+          mkdir -p _package dist
+          cp src/bin/Release/net48/SirrohFurRandomizer.dll _package/
+          cat > _package/manifest.json <<'JSON'
+          {
+            "name": "SirrohFurRandomizer",
+            "version_number": "0.1.0",
+            "website_url": "https://github.com/SirRosa/Sirroh-Fur-Randomizer",
+            "description": "Fast and networked fur and skin variants for nine Valheim creatures.",
+            "dependencies": ["denikson-BepInExPack_Valheim-5.4.2351"]
+          }
+          JSON
+          cat > _package/README.md <<'MD'
+          # Sirroh Fur Randomizer 0.1.0 — test build
+
+          Shares material instances across all animals; no global shader scans,
+          no per-animal new Material allocation, and no LevelEffects replacement.
+          Saved skin indices are preserved using compatible ZDO keys.
+          Client and dedicated-server plugin installation recommended.
+
+          Do not install alongside the older skin randomizer. Back up your
+          Valheim world and character before testing.
+
+          This release is compiled against the current dedicated-server API;
+          in-game performance and multiplayer compatibility are not yet verified.
+          MD
+          python3 -m pip install --quiet Pillow
+          python3 - <<'PY'
+          from PIL import Image,ImageDraw
+          im=Image.new("RGBA",(256,256),(28,32,34,255))
+          d=ImageDraw.Draw(im)
+          d.rounded_rectangle((22,22,234,234),radius=42,fill=(51,57,61),outline=(194,158,92),width=7)
+          for x,y,r in ((76,99,18),(116,76,19),(160,77,19),(199,102,17)):
+              d.ellipse((x-r,y-r,x+r,y+r),fill=(202,165,95))
+          d.ellipse((84,125,175,204),fill=(202,165,95))
+          d.ellipse((104,117,156,170),fill=(202,165,95))
+          im.save("_package/icon.png")
+          PY
+          (cd _package && zip -qr ../dist/Sirroh-Fur-Randomizer-0.1.0-test.zip .)
+          unzip -l dist/Sirroh-Fur-Randomizer-0.1.0-test.zip
+          sha256sum dist/Sirroh-Fur-Randomizer-0.1.0-test.zip
+
+      - name: Upload test package
+        uses: actions/upload-artifact@v4
+        with:
+          name: Sirroh-Fur-Randomizer-0.1.0-test
+          path: dist/Sirroh-Fur-Randomizer-0.1.0-test.zip
+          if-no-files-found: error
+
+      - name: Publish test prerelease
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if gh release view v0.1.0-test >/dev/null 2>&1; then
+            gh release upload v0.1.0-test dist/Sirroh-Fur-Randomizer-0.1.0-test.zip --clobber
+          else
+            gh release create v0.1.0-test dist/Sirroh-Fur-Randomizer-0.1.0-test.zip \
+              --title "Sirroh Fur Randomizer 0.1.0 — test" --prerelease --latest=false \
+              --notes "Compiled against current Valheim dedicated-server game assemblies. In-game FPS, shaders and multiplayer still require testing."
+          fi
