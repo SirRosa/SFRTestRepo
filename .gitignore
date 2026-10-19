@@ -1,0 +1,7 @@
+_input/
+_references/
+**/bin/
+**/obj/
+*.user
+*.suo
+.DS_Store
