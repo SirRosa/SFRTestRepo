@@ -1,0 +1,289 @@
+{
+  "m_Name": "neck1",
+  "m_Shader": {
+    "m_FileID": 0,
+    "m_PathID": -7978267036472742847
+  },
+  "m_ShaderKeywords": "_ADDSNOW_ON _ALPHATEST_ON _EMISSION _NORMALMAP _SPECGLOSSMAP _TWOSIDEDNORMALS_ON",
+  "m_LightmapFlags": 0,
+  "m_EnableInstancingVariants": true,
+  "m_DoubleSidedGI": false,
+  "m_CustomRenderQueue": -1,
+  "stringTagMap": [],
+  "disabledShaderPasses": [],
+  "m_SavedProperties": {
+    "m_TexEnvs": [
+      [
+        "_BumpMap",
+        {
+          "m_Texture": {
+            "m_FileID": 0,
+            "m_PathID": 280062575203112035
+          },
+          "m_Scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "m_Offset": {
+            "x": 0.0,
+            "y": 0.0
+          }
+        }
+      ],
+      [
+        "_EmissionMap",
+        {
+          "m_Texture": {
+            "m_FileID": 0,
+            "m_PathID": -2067639361273825070
+          },
+          "m_Scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "m_Offset": {
+            "x": 0.0,
+            "y": 0.0
+          }
+        }
+      ],
+      [
+        "_MainTex",
+        {
+          "m_Texture": {
+            "m_FileID": 0,
+            "m_PathID": 6561879014799890999
+          },
+          "m_Scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "m_Offset": {
+            "x": 0.0,
+            "y": 0.0
+          }
+        }
+      ],
+      [
+        "_MetallicGlossMap",
+        {
+          "m_Texture": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "m_Scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "m_Offset": {
+            "x": 0.0,
+            "y": 0.0
+          }
+        }
+      ],
+      [
+        "_StyleTex",
+        {
+          "m_Texture": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "m_Scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "m_Offset": {
+            "x": 0.0,
+            "y": 0.0
+          }
+        }
+      ]
+    ],
+    "m_Floats": [
+      [
+        "_AddRain",
+        0.0
+      ],
+      [
+        "_AddSnow",
+        1.0
+      ],
+      [
+        "_BumpScale",
+        1.0
+      ],
+      [
+        "_Cull",
+        0.0
+      ],
+      [
+        "_Cutoff",
+        0.5
+      ],
+      [
+        "_DetailNormalMapScale",
+        1.0
+      ],
+      [
+        "_DstBlend",
+        0.0
+      ],
+      [
+        "_GlossMapScale",
+        0.0
+      ],
+      [
+        "_Glossiness",
+        0.4399999976158142
+      ],
+      [
+        "_GlossyReflections",
+        1.0
+      ],
+      [
+        "_Hue",
+        0.0
+      ],
+      [
+        "_MetalGloss",
+        0.0
+      ],
+      [
+        "_Metallic",
+        0.0
+      ],
+      [
+        "_Mode",
+        1.0
+      ],
+      [
+        "_MossAlpha",
+        1.0
+      ],
+      [
+        "_MossBlend",
+        0.0
+      ],
+      [
+        "_MossNormal",
+        0.5
+      ],
+      [
+        "_MossTransition",
+        0.10000000149011612
+      ],
+      [
+        "_OcclusionStrength",
+        1.0
+      ],
+      [
+        "_Parallax",
+        0.019999999552965164
+      ],
+      [
+        "_PixelSize",
+        128.0
+      ],
+      [
+        "_RippleDistance",
+        0.0
+      ],
+      [
+        "_RippleFreq",
+        1.0
+      ],
+      [
+        "_Saturation",
+        0.0
+      ],
+      [
+        "_SmoothnessTextureChannel",
+        0.0
+      ],
+      [
+        "_SpecularHighlights",
+        1.0
+      ],
+      [
+        "_SrcBlend",
+        1.0
+      ],
+      [
+        "_Style",
+        0.0
+      ],
+      [
+        "_TwoSidedNormals",
+        1.0
+      ],
+      [
+        "_UVSec",
+        0.0
+      ],
+      [
+        "_UseGlossmap",
+        0.0
+      ],
+      [
+        "_UseStyles",
+        0.0
+      ],
+      [
+        "_Value",
+        0.0
+      ],
+      [
+        "_ZWrite",
+        1.0
+      ]
+    ],
+    "m_Colors": [
+      [
+        "_Color",
+        {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        }
+      ],
+      [
+        "_EmissionColor",
+        {
+          "r": 1.091911792755127,
+          "g": 1.5,
+          "b": 1.229817509651184,
+          "a": 1.0
+        }
+      ],
+      [
+        "_MetalColor",
+        {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        }
+      ],
+      [
+        "_MossColor",
+        {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        }
+      ],
+      [
+        "_SpecColor",
+        {
+          "r": 0.19999995827674866,
+          "g": 0.19999995827674866,
+          "b": 0.19999995827674866,
+          "a": 1.0
+        }
+      ]
+    ]
+  },
+  "m_BuildTextureStacks": []
+}
