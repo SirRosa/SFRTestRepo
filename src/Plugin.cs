@@ -11,7 +11,7 @@ using UnityEngine.Rendering;
 
 namespace Sirroh.FurRandomizer
 {
-    [BepInPlugin("sirroh.furrandomizer", "Sirroh Fur Randomizer", "0.1.0")]
+    [BepInPlugin("sirroh.furrandomizer", "Sirroh Fur Randomizer", "0.1.1")]
     public sealed class Plugin : BaseUnityPlugin
     {
         internal static ManualLogSource Log;
@@ -251,6 +251,13 @@ namespace Sirroh.FurRandomizer
                 if (!material)
                     continue;
 
+                // Correct only the albino deer: its white albedo and old gloss
+                // settings produced near-white specular clipping in sunlight.
+                // Operates once on the shared AssetBundle material, not per animal.
+                if (animal.Equals("Deer", StringComparison.OrdinalIgnoreCase) &&
+                    variantName.Equals("Albino", StringComparison.OrdinalIgnoreCase))
+                    ToneDownAlbinoDeer(material);
+
                 if (!byAnimal.TryGetValue(animal, out Dictionary<string, Variant> skins))
                 {
                     skins = new Dictionary<string, Variant>(StringComparer.OrdinalIgnoreCase);
@@ -301,6 +308,37 @@ namespace Sirroh.FurRandomizer
                 Variants[entry.Key] = sorted;
             }
             Plugin.Log?.LogInfo("Loaded " + available + " skin variants using shared material instances.");
+        }
+
+        private static void ToneDownAlbinoDeer(Material material)
+        {
+            if (!material)
+                return;
+
+            // Keep the coat visibly white, but avoid 100% white albedo under
+            // strong Valheim sunlight / post-processing.
+            if (material.HasProperty("_Color"))
+                material.SetColor("_Color", new Color(0.72f, 0.72f, 0.70f, 1f));
+
+            // Fur should scatter light diffusely, not look like painted metal.
+            // Values are set once for the shared variant; no material clones.
+            if (material.HasProperty("_Glossiness"))
+                material.SetFloat("_Glossiness", 0.02f);
+            if (material.HasProperty("_GlossMapScale"))
+                material.SetFloat("_GlossMapScale", 0f);
+            if (material.HasProperty("_Metallic"))
+                material.SetFloat("_Metallic", 0f);
+            if (material.HasProperty("_MetalGloss"))
+                material.SetFloat("_MetalGloss", 0f);
+            if (material.HasProperty("_SpecularHighlights"))
+                material.SetFloat("_SpecularHighlights", 0f);
+            if (material.HasProperty("_GlossyReflections"))
+                material.SetFloat("_GlossyReflections", 0f);
+            if (material.HasProperty("_SpecColor"))
+                material.SetColor("_SpecColor", Color.black);
+            if (material.HasProperty("_EmissionColor"))
+                material.SetColor("_EmissionColor", Color.black);
+            material.DisableKeyword("_EMISSION");
         }
 
         internal static bool TryApply(GameObject animalObject, string animal, int index)
